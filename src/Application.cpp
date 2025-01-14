@@ -2,12 +2,10 @@
 #include <GLFW/glfw3.h>
 
 #include <iostream>
+#include <filesystem>
+#include <string>
 
 #include "shaderProgram.h"
-
-const char* vertexShaderSource = "C:\\Dev\\OpenGL-learn\\src\\shaders\\shader.vs";
-
-const char* fragmentShaderSource = "C:\\Dev\\OpenGL-learn\\src\\shaders\\shader.fs";
 
 /* Function to resize the viewport given a window and the new size*/
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
@@ -20,6 +18,19 @@ void processInput(GLFWwindow* window) {
     if (glfwGetKey(window, GLFW_KEY_ESCAPE) == GLFW_PRESS)
         glfwSetWindowShouldClose(window, true);
 }
+
+std::string FileSource(std::string path) {
+    std::string dirStr = std::filesystem::current_path().string();
+    std::string absPath = dirStr + path;
+    return absPath;
+    
+
+
+};
+
+// Path for vertex and fragment shader
+std::string vertexShaderSource = FileSource("\\src\\shaders\\shader.vs");
+std::string fragmentShaderSource = FileSource("\\src\\shaders\\shader.frag");
 
 int main()
 {
@@ -43,6 +54,9 @@ int main()
         return -1;
     }
     glfwSetFramebufferSizeCallback(window, framebuffer_size_callback); 
+
+
+    std::cout << fragmentShaderSource << std::endl;
 
     float vertices[] = {
      0.5f,  0.5f, 0.0f, 1.0f, 0.0f, 0.0f,
