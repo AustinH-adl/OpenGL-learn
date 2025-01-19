@@ -1,5 +1,11 @@
+// OpenGL linking libraries and functions
 #include <glad/glad.h>
 #include <GLFW/glfw3.h>
+
+// GLM includes 
+#include "glm/glm.hpp"
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 #include <iostream>
 #include <filesystem>
@@ -7,6 +13,7 @@
 
 #include "headers/shaderProgram.h"
 #include "headers/stb_image.h"
+
 
 /* Function to resize the viewport given a window and the new size*/
 void framebuffer_size_callback(GLFWwindow* window, int width, int height)
