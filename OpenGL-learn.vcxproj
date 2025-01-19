@@ -144,12 +144,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="src\Application.cpp" />
-    <ClCompile Include="src\glad\glad.c" />
+    <ClCompile Include="glad\glad.c" />
+    <ClCompile Include="src\STB_image.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Dependencies\GLFW\include\GLFW\glfw3.h" />
     <ClInclude Include="Dependencies\GLFW\include\GLFW\glfw3native.h" />
-    <ClInclude Include="src\shaderProgram.h" />
+    <ClInclude Include="src\headers\shaderProgram.h" />
+    <ClInclude Include="src\headers\stb_image.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
